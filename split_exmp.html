@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Split & 	Join</TITLE>
+		<SCRIPT LANGUAGE = "Javascript">
+			var book_name="Catch 22 Slaughterhouse 5 Fahrenheit 451";
+			var book_name_array = book_name.split(' ');
+			
+			var i;
+			for(i=0;i<book_name_array.length;i++){
+				if(!isNaN(book_name_array[i])){ <!--isNaN is used to check whether a string is a valid number or not(return true only if it is a number) -->
+					document.write(book_name_array[i]+"<br/>");
+				}
+			}
+		</SCRIPT>
+	</HEAD>
+	
+	<BODY>
+		
+	</BODY>
+</HTML>
+

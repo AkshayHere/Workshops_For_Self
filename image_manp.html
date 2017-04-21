@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Image Collections</TITLE>
+	</HEAD>
+	
+	<BODY>
+		<IMG src="Pic/home.jpg" alt="No Image">
+		<p>
+		<IMG src="Pic/home2.jpg" alt="No Image">
+		<p>
+		
+		<input type="button" value=" GO " onClick="image_test()">
+		
+		<p>
+		<label id="label_1">Image Names</label>
+		
+		<SCRIPT LANGUAGE = "Javascript">	
+                function image_test(){
+					var len = document.images.length;
+					var imgs = document.images;
+					
+					<!-- document.getElementById("label_1").innerHTML = imgs[0].src; -->
+					
+					var sources= "";
+					for(i=0;i<len;i++){
+						sources = sources + imgs[i].src + "<br>";
+					}
+					document.getElementById("label_1").innerHTML = sources;
+				}
+		</SCRIPT>
+	</BODY>
+</HTML>
+

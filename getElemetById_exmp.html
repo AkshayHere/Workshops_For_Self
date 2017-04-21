@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Javascript and Forms</TITLE>
+
+		<SCRIPT LANGUAGE = "Javascript">
+			function validate(){
+				if(document.getElementById("textbox_1").value == '')
+					document.getElementById("textbox_1").style.backgroundColor='red';
+			}
+		</SCRIPT>
+	</HEAD>
+	
+	<BODY>
+			NAME: <INPUT TYPE="Text" SIZE="15" VALUE="" ID="textbox_1">
+			<INPUT TYPE="Button" VALUE="SEND" onClick="validate()">
+	</BODY>
+</HTML>
+
+
