@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Canvas Template</TITLE>
+
+	<SCRIPT LANGUAGE = "Javascript">
+
+		function drawOnCanvas() {
+
+			var canvas = document.getElementById("canvas_1");
+
+			if (canvas.getContext){
+				var canvas_context = canvas.getContext("2d");
+				<!-- alert("2D context supported"); -->
+				<!-- To draw a rectangle in canvas -->
+				<!-- canvas_context.strokeRect( 20, 30, 100, 50 ); -->
+				<!-- To fill color in a rectangle in canvas -->
+				<!-- canvas_context.fillRect( 20, 100, 100, 50 ); -->
+				<!-- To clear color from a filled rectangle in canvas -->
+				<!-- canvas_context.clearRect( 35, 110, 50, 30 ); -->
+				
+				
+				<!-- To draw an arc-->
+				
+				var start_degrees = 0;
+				var start_angle = ( Math.PI/180 ) * start_degrees;
+
+				var end_degrees = 180;
+				var end_angle = ( Math.PI/180 ) * end_degrees;
+
+				canvas_context.beginPath();
+				canvas_context.arc(75,75 50,start_angle,end_angle,true);
+				
+				canvas_context.strokeStyle ="rgb(0,222,0)";
+				canvas_context.stroke();
+			}
+
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY>
+
+	<SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+	</SECTION>
+
+	<P>
+		<INPUT TYPE ="Button" VALUE="  Draw  " onClick="drawOnCanvas()">
+	</P>
+
+	</BODY>
+</HTML>
+
+

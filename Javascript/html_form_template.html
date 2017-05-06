@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Javascript and Forms</TITLE>
+
+		<SCRIPT LANGUAGE = "Javascript">
+			function validate(){
+				var emailError = checkEmail();
+				var radioError = checkRadio();
+				var dropdownError = checkDropdown();
+				var checkboxError = checkCheckbox();
+				
+				if(emailError && radioError && dropdownError && checkboxError){
+					document.frmOne.submit();
+				}
+				else{
+					return false;
+				}
+			}
+			
+			function checkEmail(){
+				var email = document.frmOne.email.value;
+				if(email == ""){
+					document.getElementById("email_error").innerHTML = "No Email Address";
+					return false;
+					}
+				else{
+					document.getElementById("email_error").innerHTML = "";
+					return true;
+					}
+			}
+			
+			function checkRadio(){
+				var payment ="";
+				var len = document.frmOne.payment.length;
+				var i;
+				
+				for(i=0;i<len;i++){
+					if(document.frmOne.payment[i].checked){
+						payment = document.frmOne.payment[i].value;
+						break;
+					}
+				}
+				
+				if(payment == ""){
+					document.getElementById("radio_error").innerHTML = "No Payment selected";
+					return false;
+				}
+				else{
+				document.getElementById("radio_error").innerHTML = "";
+				return true;
+				}
+			}
+			
+			function checkDropdown(){
+				var chosen ="";
+				var len = document.frmOne.hear.length;
+				var i;
+				
+				for(i=0;i<len;i++){
+					if(document.frmOne.hear[i].selected){
+						chosen = document.frmOne.hear[i].value;
+					}
+				}
+				
+				if(chosen == "None"){
+					document.getElementById("dropdown_error").innerHTML = "None selected";
+					return false;
+				}
+				else{
+					document.getElementById("dropdown_error").innerHTML = "";
+					return true;
+				}
+			}
+			
+			function checkCheckbox(){
+				if(document.frmOne.terms.checked){
+					document.getElementById("checkbox_error").innerHTML = "";
+					return true;
+				}
+				else{
+				document.getElementById("checkbox_error").innerHTML = "Please agree to the terms !";
+				return false;
+				}
+			}
+		</SCRIPT>
+	</HEAD>
+	
+	<BODY>
+
+		<FORM NAME="frmOne" ACTION="" METHOD="POST">
+
+		<P>
+			EMAIL: <INPUT TYPE="text" NAME="email" VALUE="" PLACEHOLDER="Email Address"> 
+			<SPAN STYLE=color:red ID="email_error"></SPAN>
+		</P>
+
+		<P>
+			Payment Options:
+			<INPUT TYPE="Radio" Name="payment" Value="CC">Credit Card
+			<INPUT TYPE="Radio" Name="payment" Value="DC">Debit Card
+			<INPUT TYPE="Radio" Name="payment" Value="PP">PayPal 
+			<SPAN STYLE=color:red ID="radio_error"></SPAN>
+		</P>
+
+		<P>
+		Where did you hear about us?
+		<SELECT NAME="hear">
+			<OPTION Value="None">None</OPTION>
+			<OPTION Value="paper">Newspaper</OPTION>
+			<OPTION Value="tv">Television</OPTION>
+			<OPTION Value="mouth">Word of Mouth</OPTION>
+			<OPTION Value="seach">Search Engine</OPTION>
+		</SELECT>
+		 <SPAN STYLE=color:red ID="dropdown_error"></SPAN>
+		</P>
+
+		<P>
+			<LABEL FOR="CB1">Terms and Conditions</LABEL>
+			<INPUT TYPE="Checkbox" Name="terms" ID="CB1" Value="TAC">
+			<SPAN STYLE=color:red ID="checkbox_error"></SPAN>
+		</P>
+
+		<P>&nbsp;</P>
+		<INPUT TYPE="button" VALUE="  SUBMIT  " onClick="validate()">
+		</FORM>
+
+	</BODY>
+</HTML>
+
+

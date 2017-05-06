@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Javascript Geolocation</TITLE>
+	</HEAD>
+	
+	<BODY>
+		<P ID="error_code"></P>
+		<DIV ID="map"></DIV>
+		
+		<SCRIPT LANGUAGE = "Javascript">	
+            var getLabel = document.getElementById("error_code");
+			
+			if(navigator.geolocation){
+				navigator.geolocation.getCurrentPosition( getLongLat, errorMessage )
+			}
+			else{
+				getLabel.innerHTML = "Geolocation not supported";
+			}
+			
+			function getLongLat(position){
+				<!-- getLabel.innerHTML = position.coords.latitude + "<br>"; -->
+				<!-- getLabel.innerHTML = getLabel.innerHTML + position.coords.longitude + "<br>"; -->
+				
+				var pos = position.coords.latitude +" , "+ position.coords.longitude;
+				var display ="http://maps.googleapis.com/maps/api/staticmap?" + pos + "&zoom=15&size=500x500&markers=" 
+									+ pos +"&sensor=false";
+									
+				var img_display = "<img src="+ display +">";
+				document.getElementById("map").innerHTML = img_display;
+			}
+			
+			function errorMessage(error){
+				switch( error.code ) {
+					case error.TIMEOUT:
+						getLabel.innerHTML = 'Timeout';
+						break;
+
+					case error.POSITION_UNAVAILABLE:
+						getLabel.innerHTML = 'Position unavailable';
+						break;
+
+					case error.PERMISSION_DENIED:
+						getLabel.innerHTML ='Permission denied';
+						break;
+
+					case error.UNKNOWN_ERROR:
+						getLabel.innerHTML ='Unknown error';
+						break;
+				}
+			}
+		</SCRIPT>
+	</BODY>
+</HTML>
+

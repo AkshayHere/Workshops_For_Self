@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Path</TITLE>
+
+	<SCRIPT>
+
+		function drawOnCanvas() {
+
+			var canvas = document.getElementById("canvas_1");
+			
+			if(canvas.getContext){
+				var canvas_context = canvas.getContext("2d");
+				
+				canvas_context.beginPath();
+				canvas_context.moveTo(75,100);
+				
+				canvas_context.lineTo(150,200);
+				canvas_context.lineTo(150,25);
+				
+				canvas_context.closePath();
+				
+				canvas_context.fillStyle="rgb(255,0,0)";
+				canvas_context.strokeStyle ="rgb(0,0,255)";
+				canvas_context.linwWidth = 10;
+				canvas_context.stroke();
+				canvas_context.fill();
+			}
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY>
+
+	<SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+	</SECTION>
+
+	<P>
+		<INPUT TYPE ="Button" VALUE="  Draw  " onClick="drawOnCanvas()">
+	</P>
+
+	</BODY>
+</HTML>
+
+

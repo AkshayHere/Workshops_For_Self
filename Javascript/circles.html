@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Canvas Template</TITLE>
+
+	<SCRIPT>
+
+		function drawOnCanvas() {
+
+			var canvas = document.getElementById("canvas_1");
+
+			if (canvas.getContext){
+				var canvas_context = canvas.getContext("2d");
+				<!-- To draw an arc-->
+				var start_degrees = 180;
+				var start_angle = ( Math.PI/180 ) * start_degrees;
+
+				var end_degrees = 270;
+				var end_angle = ( Math.PI/180 ) * end_degrees;
+
+				canvas_context.beginPath();
+				canvas_context.arc( 75, 75, 50, start_angle, end_angle, false );
+				
+				canvas_context.strokeStyle = "rgb( 0,222,0 )";
+				canvas_context.stroke();
+				
+				<!-- To draw a circle with fill color-->
+				var new_start_degree = 0;
+				var new_start_angle = ( Math.PI/180 ) * new_start_degree;
+
+				var new_end_degree = 360;
+				var new_end_angle = ( Math.PI/180 ) * new_end_degree;
+				
+				canvas_context.beginPath();
+				canvas_context.arc(225,75,50,new_start_angle,new_end_angle,false);
+				
+				canvas_context.fillStyle="rgb(0,0,255)";
+				canvas_context.fill();
+				
+				<!-- To draw a semi circle below-->
+				var start_degree3 = 0;
+				var start_angle3 = ( Math.PI/180 ) * start_degree3;
+
+				var end_degree3 = 180;
+				var end_angle3 = ( Math.PI/180 ) * end_degree3;
+				
+				canvas_context.beginPath();
+				canvas_context.arc(75,225,50,start_angle3,end_angle3,false);
+				
+				canvas_context.fillStyle="rgb(255,255,0)";
+				canvas_context.fill();
+				
+				<!-- To draw a semi circle above-->
+				var start_degree4 = 0;
+				var start_angle4 = ( Math.PI/180 ) * start_degree4;
+
+				var end_degree4 = 180;
+				var end_angle4 = ( Math.PI/180 ) * end_degree4;
+				
+				canvas_context.beginPath();
+				canvas_context.arc(225,225,50,start_angle4,end_angle4,true);
+				
+				canvas_context.fillStyle="rgb(0,255,255)";
+				canvas_context.fill();
+			}
+
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY>
+
+	<SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+	</SECTION>
+
+	<P>
+		<INPUT TYPE ="Button" VALUE="  Draw  " onClick="drawOnCanvas()">
+	</P>
+
+	</BODY>
+</HTML>
+
+

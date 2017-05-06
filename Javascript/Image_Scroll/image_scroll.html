@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Image Scroller</TITLE>
+		<SCRIPT LANGUAGE = "Javascript">	
+            var p1 = new Image();
+			var p2 = new Image();
+			var p3 = new Image();
+			var p4 = new Image();
+			var p5 = new Image();
+			
+			p1.src = "Image_Scroll/pic_1.jpg";
+			p2.src = "Image_Scroll/pic_2.jpg";
+			p3.src = "Image_Scroll/pic_3.jpg";
+			p4.src = "Image_Scroll/pic_4.jpg";
+			p5.src = "Image_Scroll/pic_5.jpg";
+			
+			var imgArray = new Array(p1,p2,p3,p4,p5);
+			var counter = 0;
+			var end = imgArray.length - 1;
+			
+			function scroll_forward(){
+				if(counter == end){
+					alert("No More Images");
+				}
+				else{
+					counter++;
+				}
+		
+				document.pic1.src = imgArray[counter].src;
+			}
+			
+			function scroll_back(){
+				if(counter == 0){
+					alert("Start of Images");
+				}
+				else{
+					counter--;
+				}
+		
+				document.pic1.src = imgArray[counter].src;
+			}
+		</SCRIPT>
+	</HEAD>
+	
+	<BODY>
+		<Table width="500">
+			<tr>
+				<td height="200" width="100">
+					<img src="Image_Scroll/forward.gif" onClick="scroll_forward()">
+				</td>
+				<td width="300">
+					<img src="Image_Scroll/pic_1.jpg" name="pic1">
+				</td>
+				<td width="100">
+					<img src="Image_Scroll/back.gif" onClick="scroll_back()">
+				</td>
+			</tr>
+		</Table>
+	</BODY>
+</HTML>
+
