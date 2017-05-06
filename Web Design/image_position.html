@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Image Position</title>
+		<style>
+			p.border1{
+					border : 1px solid green;
+				}
+			P.rel {
+					border: 1px solid green;
+					position: absolute;
+					top: 20px;
+				}
+			.pos_relative{
+					position: relative;
+					z-index: 0;
+				}
+			.pos_absolute{
+					position: absolute;
+					top: 20px;
+					left: 50px;
+					z-index: -1;
+				}
+		</style>
+	</head>
+	<body>
+		<!-- <p class="border1"> -->
+			<!-- <a href="pages/about.html">About Site</a> -->
+		<!-- </p> -->
+		<!-- <p class="rel"> -->
+			<!-- <a href="pages/contacts.html" target="_parent">Contact Us</a> -->
+		<!-- </p> -->
+		<!-- <p class="border1"> -->
+			<!-- <A HREF = "mailto:online@homeandlearn.co.uk">Email us</A> -->
+		<!-- </p> -->
+		<p>
+			<A HREF = "pages/about.html#section2">Click here for Section Two</A>
+		</p>
+		<div class="pos_relative">
+		<img src="york_images/york_minster.jpg" width="200px" height="200px"/>
+			<div class="pos_absolute">
+				<img src="york_images/york_minster_2.gif" width="200px" height="200px"/>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,93 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>HTML5 Form elements</title>
+		<style>
+			
+		</style>
+		<script language="javascript">
+			var canvasid = document.getelementbyid("MyCanvas");
+		</script>
+	</head>
+	<body>
+		<form>
+			<!-- Place holder used to have something written as background of a textbox -->
+			<!-- required is used when u dont what the field to be left blank -->
+			<input type="text" placeholder="enter your first name" required>
+			<p>
+			<input type="submit" value="contact us">
+			<p>
+			
+			<!-- Email textbox (checks for .com at the end) -->
+			<label for="emailText">Email:</label>
+			<input id="emailText" type="Email" placeholder="enter your email id" required>
+			<p>
+			
+			<!-- URL textbox (checks for http:// at the start)-->
+			<label for="urlText">URL: </label>
+			<input id="urlText" type="url" placeholder="enter url here">
+			<p>
+			
+			<!-- Search box -->
+			<input type="search">
+			<p>
+			
+			<!-- Spinner (size: width of box, min & max: sets the range, step: increase/decrease by how much) -->
+			<label>Spinner</label>
+			<input type="number" min="0" max="10" step="2" value="6" size="6">
+			<p>
+			
+			<!-- Slider (type: range) -->
+			<label>Slider</label>
+			<input type="range" min="0" max="10" step="2" value="6" size="6">
+			<p>
+			
+			<!-- Date picker -->
+			<label>Date</label>
+			<input type="Date" value="2014-09-29">
+			<p>
+			
+			<!-- Color Picker -->
+			<input type="color">
+			<p>
+			
+			<!-- Data List (id of datalist and textbox(input) should match), value appears in the textbox
+					label shows what it is -->
+			<input type="text" list="zip_codes">
+				<datalist id="zip_codes">
+					<option value="al" label="alabama">
+					<option value="ak" label="alaska">
+					<option value="as" label="american samoa">
+					<option value="az" label="arizona">
+					<option value="ar" label="arkansas">
+					<option value="ca" label="california">
+					<option value="co" label="colorado">
+					<option value="ct" label="connecticut">
+				</datalist>
+			<p>
+			
+			<!-- canvas tag -->
+			<canvas height="400" width="400" id="MyCanvas">
+			</canvas>
+			<p>
+			
+			<!-- Details tag(once you click it, "open" appears in the html tag) -->
+			<Details>
+				<summary>Click here for further information</summary >
+				<P>
+				Further information is revealed when a user clicks the summary
+				<BR>
+				Click the summary again to hide this message.
+			</Details>
+			<p>
+			
+			<!-- Aside tag and mark tag(gives a yellow color around the text) -->
+			<Article>
+				<P>
+					Main article text here
+				</P>
+				<Aside>We've missed out other <mark>ARTICLE</mark> tags</Aside>
+			</Article>
+		</form>
+	</body>
+</html>

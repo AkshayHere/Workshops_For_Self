@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+    var _intervalId;
+
+    function fadeInLastImg()
+    {
+        var backImg = $('.container img:first');
+        backImg.hide();
+        $('.container' ).append( backImg );
+        backImg.fadeIn()
+    };
+
+    _intervalId = setInterval( function() 
+    {
+        fadeInLastImg();
+    }, 1000 );
+
+});
+    </script>
+	  
+	  <style type="text/css">
+        .container {
+            position:fixed; 
+            top:-50%; 
+            left:-50%; 
+            width:200%; 
+            height:200%;
+        }
+        .container img {
+            position:absolute; 
+            top:0; 
+            left:0; 
+            right:0; 
+            bottom:0; 
+            margin:auto; 
+            min-width:50%;
+            min-height:50%;
+        }
+    </style>
+	
+	
+   </head>
+	
+   <body>
+			<div class='container'>
+        <img src="Desert.jpg" alt="">
+        <img src="Tulips.jpg" alt="">
+    </div>
+   </body>
+	
+</html>

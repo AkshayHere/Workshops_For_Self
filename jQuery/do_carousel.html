@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+
+   <head>
+      <title>Image Carousel</title>
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function(){
+   // images in the pool
+   var images=["images/Desert.jpg","images/Penguins.jpg","images/Koala.jpg","images/Lighthouse.jpg",
+           "images/Jellyfish.jpg"];
+
+      // next image to display
+      var next = 0;
+
+      // interval beetween images
+      var INTERVAL = 2000;
+
+      // main function
+      var doCarrousel = function() {
+         $("#top").fadeOut(function() {
+             $(this).attr("src", images[next]).fadeIn(
+                 function() {
+                   setTimeout(doCarrousel, INTERVAL);
+                 });
+          });
+          if (++next >= images.length)
+             next = 0;
+       };
+
+       //start carrousel
+       doCarrousel();
+});
+      </script>
+   </head>
+	
+   <body>
+			<img id="top" src="" alt="NO IMAGE" style="width:1604px;height:828px;">
+   </body>
+	
+</html>
