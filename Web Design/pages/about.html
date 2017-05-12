@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>ABOUT</title>
+		<style>
+			img{
+				float: right;
+				margin: 10px;
+			}
+			
+			.MyBorder{
+				padding: 5px;
+				border-style: solid;
+				border-width: 2px;
+				border-color: #551010;
+			}
+			
+			body{
+				background-image: url('backgrounds/gradient_background.gif');
+				background-repeat: repeat-x; 
+			}
+			
+			FIGURE, FIGCAPTION {
+				display: block;
+				font-style: italic;
+				font-variant: small-caps;
+			}
+		</style>
+	</head>
+	<body>
+	<FIGURE>
+		<img src="york_images/york_minster_2.gif" alt="Blah" usemap="#">
+		<FIGCAPTION>A view of York Minster from a side street.</FIGCAPTION>
+	</FIGURE>
+		<map name="mapper">
+			<area shape="Rect" coords="37,25,137,72" href="#">
+			<area shape="Circle" coords="205,49,29" href="#">
+			<area shape="Poly" coords="317,23,349,76,284,76" href="#">
+		</map>
+		
+		<p class="section2">The CSS property we need in order to move the image is called float. The float property can take three values: left, right and none. To get some space between the image and the text we can use the margin property. We've set it to 10 pixels. This will give you space around the entire image. If you only want space on specific sides of the image you can use these:</p>
+		<A HREF = "contacts.html">Contact Us</A>
+		<A HREF = "../hyperlink.html">Home</A>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<HTML>
+	<HEAD>
+		<TITLE>Gradients</TITLE>
+
+	<SCRIPT>
+
+		function drawOnCanvas() {
+
+			var canvas = document.getElementById("canvas_1");
+			
+			if(canvas.getContext){
+				var canvas_context = canvas.getContext("2d");
+				
+				var home = new Image();
+				home.src = "Pic/home.jpg"
+				
+				home.onLoad = function(){
+				
+				var pattern = canvas_context.createPattern(home,"repeat");
+				canvas_context.fillStyle=pattern;
+				canvas_context.fill();
+			}
+		}
+
+
+	</SCRIPT>
+
+	</HEAD>
+
+	<BODY>
+
+	<SECTION style="border-style: solid; border-width: 2px; width: 500px;">
+
+		<CANVAS WIDTH="400" HEIGHT="400" ID="canvas_1">
+			Canvas tag not supported
+		</CANVAS>
+
+	</SECTION>
+
+	<P>
+		<INPUT TYPE ="Button" VALUE="  Draw  " onClick="drawOnCanvas()">
+	</P>
+
+	</BODY>
+</HTML>
+
+

@@ -1,0 +1,1 @@
+window.open("first_page.html", "First page", "toolbar=no,width=500,height=300");

@@ -1,0 +1,106 @@
+<!Doctype html>
+<html>
+	<head>
+		<title>Form with various input tags</title>
+		<link rel="stylesheet" type="text/css" href="css/forms_1.css">
+		<style>
+			#Button1 {
+				Height: 30px;
+				Width: 180px;
+				background-color: #820404;
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 18px;
+				color: #FFFFFF;
+			}
+			#Button1:hover {
+				background-color: #CCCCCC;
+			}
+			select {
+				font-family: Arial, Helvetica, sans-serif;
+				font-size: 18px;
+			}
+		</style>
+		<script>
+			function textBoxValue(){
+				alert(document.frmOne.tb1.value);
+			}
+		</script>
+	</head>
+	<body>
+		<!-- Mailto is used to open the default mail on form submit -->
+		<form name = "frmOne" method="post" action="mailto:me@me.com">
+		
+			<!-- Label with for to specify which text box it supports -->
+			<label for="tb1">Enter Name: </label>
+			
+			<!-- Size specify size of the textbox and maxlength specify no of characters it can hold -->
+			<input id="tb1" name="textBox1" type="text" size="40" value="Enter your first name" name="text1" maxlength="">
+			<br/>
+			
+			<!-- Tabindex helps to find which textbox is activated once tab is pressed based on index -->
+			<input type = "text" tabindex="2">
+			<br/>
+			<input type = "text" tabindex="3">
+			<br/>
+			<input type = "text" tabindex="1">
+			<br/>
+			
+			<!-- Text Area-->
+			<textarea rows="7" cols="30" name="textArea1" id="TA1">Default text Area</textarea>
+			<br/>
+			<br/>
+			
+			<!-- Submit button -->
+			<!-- type changed to button to implement onClick() -->
+			<input id="Button1" type="Button" value="Submit" onClick="textBoxValue()">
+			<br/>
+			<br/>
+			
+			<!-- Reset button -->
+			<input type="reset" value="Clear">
+			<br/>
+			<br/>
+			
+			<!-- Radio button set -->
+			<label for="gender">Gender</label>
+				<input type="radio" name="gender" value="Male" checked >Male <!-- "Checked" to ensure that an option is selected by default -->
+				<input type="radio" name="gender" value="Female">Female
+			<br/>
+			<br/>
+			
+			<!-- Checkbox set -->
+			<label for="c1">Firefox</label>
+				<input type="checkbox" name="browser" id="c1" value="firefox">
+			<label for="c2"> Opera </label>
+				<input type="checkbox" name="browser" id="c2" value="opera">
+			<br/>
+			<br/>
+			
+			<!-- Listbox in dropdown format -->
+			<select>
+				<option value="under 16">under 16</option>
+				<option value="16 to 25" selected>16 to 25</option> <!-- Set a default value using "selected" -->
+				<option value="26 to 40">26 to 40</option>
+				<option value="40 to 60">40 to 60</option>
+				<option value="over 60">over 60</option>
+			</select>
+			<br/>
+			<br/>
+			
+			
+			<!-- Listbox with size tag specified becomes a listbox as shown -->
+			<select size="3" multiple> <!-- For multiple selection, "multiple" is set -->
+				<option value="under 16">under 16</option>
+				<option value="16 to 25">16 to 25</option>
+				<option value="26 to 40">26 to 40</option>
+				<option value="40 to 60">40 to 60</option>
+				<option value="over 60">over 60</option>
+			</select>
+			<br/>
+			<br/>
+			
+			<!-- Password field -->
+			<input type="password" size="20" maxlength="8">
+		</form>
+	</body>
+</html>
